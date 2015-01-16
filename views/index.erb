@@ -47,9 +47,8 @@
 			<ul>
 				<% @peeps.each do |peep| %>
 					<div id="peeps">
-						<li><% peep.body %></li>
-						<!-- <li><% peep.time_stamp %></li>
-						<li><% peep.user.name %></li> -->
+						<li><%= peep.body %></li>
+						<li> Created by: <%= peep.user.name %> @ <%= peep.time_stamp.asctime %></li>
 					</div>		
 				<% end %>
 			</ul>

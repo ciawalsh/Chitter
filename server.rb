@@ -11,15 +11,15 @@ class Chitter < Sinatra::Base
 	# use Rack::MethodOveride
 
 	get '/' do 
+		flash[:errors] = nil
 		@peeps = Peep.all
 		erb :index
 	end
 
 	post '/peep' do
-		user = session[:user_id]
 		body = params["body"]
 		time_stamp = Time.now
-		Peep.create(body, time_stamp, user)
+		current_user.peeps.create(:body => body, :time_stamp => time_stamp)
 		redirect '/'
 	end
 

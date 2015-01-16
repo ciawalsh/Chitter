@@ -10,7 +10,7 @@
 
 <header>
 
-	<h1> Sign in to Peep away! </h1>
+	<h1 id="peep-header"> Sign in to Peep away! </h1>
 
 </header>
 
@@ -21,6 +21,15 @@
 		Password: <input type="password" name="password">
 		<input type="submit" value="Sign In">
 	</form>	
+
+	<% if flash[:errors] && !flash[:errors].empty? %>
+		Sorry, there were the following problems with the form;
+			<ul id="errors">
+				<% flash[:errors].each do |error| %>
+					<li> <%= error %> </li>
+				<% end %>
+			</ul>
+	<% end %>	
 
 </body>
 

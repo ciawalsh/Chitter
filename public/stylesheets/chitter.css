@@ -14,7 +14,6 @@ body {
 #sign_in {
 	display: inline;
 	float: right;
-	z-index: 1;
 	margin-top: 15px;
 	margin-right: 10px;
 	font-size: 22px;
@@ -46,40 +45,49 @@ ul li a:hover {
 }
 
 #peep-form {
+	position: relative;
 	height: 100px;
 	width: 250px;
-	margin-top: 50px;
-	margin-left: 40px;
+	left: 75px;
 	clear: both;
 }
 
-#peep-welcome {
+#peep-header {
 	color: white;
 	font-family: Cursive;
 }
 
 form {
-/*	background:#fff;*/
 	padding:0.4em;
-/*	border:1px solid #eee;*/
 	margin:0.3em;
-	width:10em;
+	width:2em;
 }
 
 #peep-box {
+	position: relative;
 	color: white;
+	display: block;
+	top: 25px;
+	clear: both;
 }
 
 li {
 	color: white;
+	padding: 5px;
+}
+
+li:nth-child(2) {
+	color: red;
 }
 
 #peeps {
-	height: 100px;
+	height: auto;
 	width: 250px;
 	background-color: blue;
-	border-radius: 10%;
-	margin-left: 1em;
+	text-align: center;
+	border-radius: 15%;
+	margin-left: 2em;
+	margin-bottom: 5px;
 	color: white;
 }
 
