@@ -21,6 +21,12 @@
 	<div id="sign_in">
 		<a href="/sessions/new">Log In</a>
 		<a href="/users/new">Sign Up</a>
+		<% if current_user %>
+			<form class="sign_out" action="/logout" method="post">
+				<input type="hidden" name="_method" value="delete">
+				<input type="submit" value="Sign Out">
+			</form>
+		<% end %>
 	</div>
 
 </header>
@@ -32,26 +38,23 @@
 			<span id="peep-header"> <%= current_user.name %>, enter your Peep here: </span>
 			<form action="/peep" method="post">
 				<input type="text" name="body" placeholder="Enter your peep here">
-				<input type="submit" value="submit">
+				<input type="submit" value="Submit">
 			</form>
 		</div>
 	<% end %>	
 
-
-	<div id="peeps">
 		<div id="peep-box">
 			<ul>
 				<% @peeps.each do |peep| %>
-					<li>
-						<% peep.body %>
-						<% peep.time_stamp %>
-						<% peep.user %>
-					</li>
+					<div id="peeps">
+						<li><% peep.body %></li>
+						<!-- <li><% peep.time_stamp %></li>
+						<li><% peep.user.name %></li> -->
+					</div>		
 				<% end %>
 			</ul>
 		</div>
-	</div>				
-
+		
 </body>
 
 </html>

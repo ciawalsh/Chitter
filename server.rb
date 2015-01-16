@@ -16,12 +16,31 @@ class Chitter < Sinatra::Base
 	end
 
 	post '/peep' do
-		# ??????
+		user = session[:user_id]
+		body = params["body"]
+		time_stamp = Time.now
+		Peep.create(body, time_stamp, user)
 		redirect '/'
 	end
 
 	get '/sessions/new' do
 		erb :"sessions/new"
+	end
+
+	post '/sessions' do
+		user = User.authenticate(params[:email], params[:password])
+		if user
+			session[:user_id] = user.id
+			redirect '/'
+		else
+			flash[:errors] = ["The email or password is incorrect"]
+			erb :"sessions/new"
+		end
+	end
+
+	post '/logout' do
+		session[:user_id] = nil
+		erb :"users/out"
 	end
 
 	get '/users/new' do

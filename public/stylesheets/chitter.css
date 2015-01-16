@@ -1,17 +1,10 @@
 body {
   background-color: #00d9ff;
 }
-/*
-#user-links {
-	height: 50px;
-	width: 100%;
-	background-color: black;
-	display: flex;
-}
 
 #welcome-message {
 	position: absolute;
-	margin-top: 5px;
+	margin-top: 10px;
 	margin-left: 20px;
 	color: white;
 	font-size: 45px;
@@ -22,7 +15,7 @@ body {
 	display: inline;
 	float: right;
 	z-index: 1;
-	margin-top: -40px;
+	margin-top: 15px;
 	margin-right: 10px;
 	font-size: 22px;
 }
@@ -38,44 +31,58 @@ body {
 }
 
 #sign_in a:visited {
-	color: white;
+	color: none;
 }
 
 #sign_in .sign_out {
-	margin-top: 5px;
-	margin-left: 22px;
+	margin-top: -5px;
+	margin-right: 5px;
+	padding-left: 35px;
 }
 
 ul li a:hover {
 	text-decoration: none;
 	color: red;
-}*/
+}
+
+#peep-form {
+	height: 100px;
+	width: 250px;
+	margin-top: 50px;
+	margin-left: 40px;
+	clear: both;
+}
+
+#peep-welcome {
+	color: white;
+	font-family: Cursive;
+}
 
 form {
 /*	background:#fff;*/
-	padding:1em;
-	border:1px solid #eee;
-	margin:1em;
+	padding:0.4em;
+/*	border:1px solid #eee;*/
+	margin:0.3em;
 	width:10em;
 }
 
-/*input {
-	padding:0.15em;
-	width:10em;
-	border:1px solid #ddd;
-	background:#fafafa;
-	font:bold 0.95em arial, sans-serif;
+#peep-box {
+	color: white;
 }
 
-input:hover, input:focus {
-	border-color:#c5c5c5;
-	background:#f6f6f6;
+li {
+	color: white;
 }
 
-#button {
-	width: 100px;
-} 
-*/
+#peeps {
+	height: 100px;
+	width: 250px;
+	background-color: blue;
+	border-radius: 10%;
+	margin-left: 1em;
+	color: white;
+}
+
 
 
 

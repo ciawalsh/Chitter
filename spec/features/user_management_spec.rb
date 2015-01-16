@@ -33,7 +33,19 @@ feature "User signs in" do
 								:password_confirmation => 'test')
 	end
 
+	scenario "with correct credentials" do
+		visit '/'
+		expect(page).not_to have_content("Welcome, Joe")
+		sign_in('test@test.com', 'test')
+		expect(page).to have_content("Welcome, Joe")
+	end
 
+	scenario "with incorrect credentials" do
+		visit '/'
+		expect(page).not_to have_content("Welcome, Joe")
+		sign_in('test@test.com', 'wrong')
+		expect(page).not_to	have_content("Welcome, Joe")
+	end
 
 end
 
@@ -47,9 +59,16 @@ feature "User signs out" do
 								:password_confirmation => 'test')
 	end
 
+	scenario "while being signed in" do
+		sign_in('test@test.com', 'test')
+		click_button "Sign Out"
+		expect(page).not_to have_content "Welcome, Joe"
+		expect(page).to have_content "See you soon!"
+	end
+
 end
 
-feature "User forgets password" do
+feature "User can post a peep" do
 
 	before(:each) do
 		User.create(:name => "Joe",
@@ -58,6 +77,14 @@ feature "User forgets password" do
 								:password => 'test',
 								:password_confirmation => 'test')
 	end
+
+	scenario "once signed in" do
+		sign_in('test@test.com', 'test')
+		fill_in :body, :with => "Hello"
+		click_button "Submit"
+		expect(page).to have_content "Hello"
+	end
+
 
 end
 
