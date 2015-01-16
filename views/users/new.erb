@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<title> Sign Up :) </title>
+	<link rel="stylesheet" type="text/css" href="../stylesheets/css_reset.css"> 
+  <link rel="stylesheet" type="text/css" href="../stylesheets/chitter.css">  
+</head>
+
+<header>
+
+	<h1> Sign up to have your say! </h1>
+
+</header>
+
+<body>
+
+	<form action="/users" method="post">
+		Name: <input type="text" name="name" value="<% @user.name %>">
+		Username: <input type="text" name="username" value="<% @user.username %>">
+		Email: <input type="text" name="email" value="<% @user.email %>">
+		Password: <input type="password" name="password">
+		Password Confirmation: <input type="password" name="password_confirmation">
+		<input type="submit" value="Sign Up">
+	</form>	
+
+	<% if flash[:errors] && !flash[:errors].empty? %>
+		Sorry, there were the following problems with the form;
+			<ul id="errors">
+				<% flash[:errors].each do |error| %>
+					<li> <%= error %> </li>
+				<% end %>
+			</ul>
+	<% end %>				
+
+</body>
+
+</html>

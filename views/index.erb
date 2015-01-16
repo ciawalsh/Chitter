@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<title> Chitter </title>
+	<link rel="stylesheet" type="text/css" href="../stylesheets/css_reset.css"> 
+  <link rel="stylesheet" type="text/css" href="../stylesheets/chitter.css">  
+</head>
+
+<header>
+
+	<div id="welcome">
+		<% if current_user %>
+			<span id="welcome-message"> Welcome, <%= current_user.name %> </span>
+		<% else %>
+			<span id="welcome-message"> Welcome to Chitter! </span>
+		<% end %>
+	</div>		
+
+	<div id="sign_in">
+		<a href="/sessions/new">Log In</a>
+		<a href="/users/new">Sign Up</a>
+	</div>
+
+</header>
+
+<body>
+
+	<% if current_user %>
+		<div id="peep-form">
+			<span id="peep-header"> <%= current_user.name %>, enter your Peep here: </span>
+			<form action="/peep" method="post">
+				<input type="text" name="body" placeholder="Enter your peep here">
+				<input type="submit" value="submit">
+			</form>
+		</div>
+	<% end %>	
+
+
+	<div id="peeps">
+		<div id="peep-box">
+			<ul>
+				<% @peeps.each do |peep| %>
+					<li>
+						<% peep.body %>
+						<% peep.time_stamp %>
+						<% peep.user %>
+					</li>
+				<% end %>
+			</ul>
+		</div>
+	</div>				
+
+</body>
+
+</html>
