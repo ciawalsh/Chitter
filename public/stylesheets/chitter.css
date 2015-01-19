@@ -2,10 +2,20 @@ body {
   background-color: #00d9ff;
 }
 
-#welcome-message {
-	position: absolute;
+header { 
+	margin-top: 1%;
+	background-color: black;
+	margin-top: 0%;
+	padding-top: 1%;
+}
+
+#welcome {
 	margin-top: 10px;
 	margin-left: 20px;
+	display: inline;
+}
+
+#welcome-message {
 	color: white;
 	font-size: 45px;
 	font-family: Cursive;
@@ -13,9 +23,8 @@ body {
 
 #sign_in {
 	display: inline;
-	float: right;
-	margin-top: 15px;
-	margin-right: 10px;
+	margin-left: 75%;
+	margin-bottom: 95%;
 	font-size: 22px;
 }
 
@@ -69,6 +78,7 @@ form {
 	display: block;
 	top: 25px;
 	clear: both;
+	margin-left: 30%;
 }
 
 li {
