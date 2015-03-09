@@ -1,6 +1,8 @@
 Chitter Challenge
 =================
 
+### Makers Academy Week 4 Friday Solo Challenge
+
 Challenge:
 -------
 
@@ -36,3 +38,13 @@ If I have time I will implement the following:
 And:
 
 * Work on the css to make it look good (we all like beautiful things).
+
+## Technologies Used
+
+- Ruby
+- Rspec
+- Capybara
+- Sinatra
+- PostgreSQL
+- HTML
+- CSS
